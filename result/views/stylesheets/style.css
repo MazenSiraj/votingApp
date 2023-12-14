@@ -110,3 +110,8 @@ body{
   width:50%;
   height:100%;
 }
+#choice .choice.dogs .label {
+  font-size: 40px;
+  margin-left: -30px;
+}
+
