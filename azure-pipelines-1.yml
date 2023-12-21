@@ -17,6 +17,6 @@ steps:
 # A script task making use of 'oc'
   - script: |
       oc project demodevops2
-      oc new-app https://github.com/MazenSiraj/votingApp#main --context-dir=/vote --name=vote --image-stream=python:latest --resource-name=vote --labels=app=vote --target-port=8080 --strategy=docker --allow-missing-imagestream-tags=true --as-deployment-config=true --create-route=true
+      oc new-app https://github.com/MazenSiraj/votingApp#main --context-dir=/vote --name=vote --image-stream=python:latest --labels=app=vote --target-port=8080 --as-deployment-config=true --create-route=true
 
 
