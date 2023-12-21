@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+pool:
+  vmImage: ubuntu-latest
+steps:
+  - task: oc-setup@3
+    inputs:
+      connectionType: 'OpenShift Connection Service'
+      openshiftService: 'Openshiftportal'
+      version: '4.14.3'
+# A script task making use of 'oc'
+  - script: |
+      oc project demodevops2
+      oc new-app https://github.com/MazenSiraj/votingApp#main --context-dir=/vote --name=vote --image-stream=python:latest --resource-name=vote --labels=app=vote --target-port=8080 --strategy=docker --allow-missing-imagestream-tags=true --as-deployment-config=true --create-route=true
+
+
