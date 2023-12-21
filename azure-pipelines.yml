@@ -12,9 +12,9 @@ steps:
   - task: oc-setup@3
     inputs:
       connectionType: 'OpenShift Connection Service'
-      openshiftService: 'Openshift'
+      openshiftService: 'Openshiftportal'
       version: '4.14.3'
 # A script task making use of 'oc'
   - script: |
-      oc new-project demodevops
+      oc new-project demodevops2
 
