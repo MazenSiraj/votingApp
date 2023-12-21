@@ -19,5 +19,5 @@ steps:
       oc project demodevops2
 
       # Specify the correct Python version in the image stream
-      oc new-app https://github.com/MazenSiraj/votingApp --context-dir=/vote --as-deployment-config=true --name=votedevops
+      oc new-app https://github.com/MazenSiraj/votingApp --context-dir=/vote --as-deployment-config=true --name=votedevops103
       oc expose service votedevops
