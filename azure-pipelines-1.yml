@@ -19,4 +19,4 @@ steps:
       oc project demodevops2
 
       # Specify the correct Python version in the image stream
-      oc new-app python~https://github.com/MazenSiraj/votingApp --context-dir=/vote --name=vote --labels=app=vote --as-deployment-config=true --allow-missing-images --strategy=source
+      oc new-app https://github.com/MazenSiraj/votingApp --context-dir=/vote --as-deployment-config=true --name=votedevops
