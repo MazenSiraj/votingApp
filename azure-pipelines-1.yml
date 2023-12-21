@@ -14,7 +14,9 @@ steps:
       connectionType: 'OpenShift Connection Service'
       openshiftService: 'Openshiftportal'
       version: '4.14.3'
-# A script task making use of 'oc'
+
   - script: |
       oc project demodevops2
-      oc new-app https://github.com/MazenSiraj/votingApp --context-dir=/vote --name=vote --image-stream=python --labels=app=vote --as-deployment-config=true --allow-missing-images
+
+      # Specify the correct Python version in the image stream
+      oc new-app https://github.com/MazenSiraj/votingApp --context-dir=/vote --name=vote --image-stream=python:3.8 --labels=app=vote --as-deployment-config=true --allow-missing-images
